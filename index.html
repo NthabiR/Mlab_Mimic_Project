@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- displays site properly based on user's device -->
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="stylesheet" href="https://fonts.google.com/specimen/Josefin+Sans">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Frontend Mentor | Base Apparel coming soon page</title>
+        <link rel="stylesheet" href="css/style.css">
+
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="all">
+            <div class="row">
+                <!--LOGO-->
+                <div class="nav">
+                    <img src="images/logo.svg" alt="">
+                </div>
+                 <!--iMAGE-->
+                <div class="img">
+                    <img src="images/hero-mobile.jpg" alt="">
+                </div>
+                 <!--HEADING-->
+                <div class="content">
+                    <div class="heading">
+
+                        <label class="first">WE'RE</label>
+                        <label class="second">COMING</label>
+                        <label class="second">SOON</label>
+                        <div class="inner">
+                            Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.
+                        </div>
+
+                    </div>
+
+                     <!--EMAIL-->
+                    <div class="action">
+                        <div class="inputf">
+                            <input type="email" id="email" class="send" placeholder="Email address">
+                            <input type="submit" value=">" id="send">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                        <div class="feed">
+                            <label for="" id="feedback"></label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="imgDsk">
+                <img src="images/hero-desktop.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- <footer>
+            <p class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
+            </p>
+        </footer> -->
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+        function ValidateEmail() {
+            var email = document.getElementById("email").value;
+            //document.getElementById("feedback").style.border = '2px solid hsl(0, 93%, 68%)';
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+
+                return (true)
+            }
+            document.getElementById("feedback").innerHTML = 'Please enter a valid email';
+            document.getElementById("email").style.border = '2px solid hsl(0, 93%, 68%)';
+
+            return (false)
+        }
+
+        document.getElementById("send").addEventListener("click", ValidateEmail);
+    </script>
+
+</html>
